@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="movies__header">
+      <div class="container">
+        <div class="row row-1">
+          <div class="logo__title white">
+            Movie<span class="color">Finder.</span>
+          </div>
+          <div>
+            <a
+              class="header__link link__hover-effect link__hover-effect-white white"
+              href="./home.html"
+              >Home</a
+            >
+            <a
+              class="header__link link__hover-effect link__hover-effect-white white"
+              href="#"
+              >Find a Movie</a
+            >
+            <a class="header__link contact__button no_cursor" href=""
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="movies__title--wrapper">
+          <h1 class="movies__title white">Browse our Movies</h1>
+        </div>
+        <div class="row row-2">
+          <div class="movies__search">
+            <input
+            type="text"
+            class="movies__search--bar"
+            placeholder="Search by Movie Title"
+            onkeyup="searchInput(event)"
+            >
+            <button class="movies__search--button pointer" onclick="searchBtn()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section #movie>
+      <div class="container">
+        <div class="row-1">
+          <div id="movie__cards">
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./movies.js"></script>
+
+  </body>
+</html>
