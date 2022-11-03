@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
+    <script defer src="./movies.js"></script>
+
     <script
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
@@ -45,7 +47,7 @@
             placeholder="Search by Movie Title"
             onkeyup="searchInput(event)"
             >
-            <button class="movies__search--button pointer" onclick="searchBtn()">
+            <button class="movies__search--button pointer" onclick="searchBtn(event)">
               <i class="fa fa-search"></i>
             </button>
           </div>
@@ -56,13 +58,17 @@
     <section #movie>
       <div class="container">
         <div class="row-1">
+          <div class="search__filter">
+              <h2 class="search">Search Results for :</h2>
+          </div>
           <div id="movie__cards">
+            <div class="movie__card">
+            </div>
+            </div>
 
           </div>
         </div>
       </div>
     </section>
-    <script src="./movies.js"></script>
-
   </body>
 </html>
