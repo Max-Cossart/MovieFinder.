@@ -23,6 +23,9 @@ function searchBtn(event) {
 
 
 async function movieSearch(title) {
+  movieCard.classList += " show__loading"
+  movieCard.classList.remove("show__movies")
+
   const movies = await fetch(
     `http://www.omdbapi.com/?apikey=7840b18e&s=${title}`
   );
@@ -30,9 +33,11 @@ async function movieSearch(title) {
   const films = moviesData.Search.slice(0, 8);
   movieCardEl.innerHTML = films.map((movie) => moviesHTML(movie)).join("");
 
+  setTimeout(() => { 
+    movieCard.classList += " show__movies"
+    movieCard.classList.remove("show__loading") 
+  }, 1000);
 }
-
-movieSearch()
 
 
 function moviesHTML(movie) {
@@ -46,9 +51,9 @@ function moviesHTML(movie) {
   </figure>
   <div class="movie__description">
     <h3 class="movie__description--title">
-      "${movie.Title}"
+      ${movie.Title}
     </h3>
-    <h4 class="movie__description--year">Year Released: "${movie.Year}"</h4>
+    <h4 class="movie__description--year">Year Released: ${movie.Year}</h4>
   </div>
   </div>`;
 }
