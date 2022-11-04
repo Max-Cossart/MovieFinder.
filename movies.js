@@ -14,17 +14,24 @@ function searchInput(event) {
   }
 }
 
+
 function searchBtn(event) {
-  let searhResultsHTML = `<h2 class="search">Search Results for : <span class="color">   ${title} </span> </h2>`;
+  movieCard.classList += " show__loading"
+  movieCard.classList.remove("show__movies")
+
+  const searhResultsHTML = `<h2 class="search">Search Results for : <span class="color">   ${title} </span> </h2>`;
   searchResults.innerHTML = searhResultsHTML;
   movieSearch(title);
+
+  setTimeout(() => { 
+    movieCard.classList += " show__movies"
+    movieCard.classList.remove("show__loading") 
+  }, 2000);
 }
 
 
 
 async function movieSearch(title) {
-  movieCard.classList += " show__loading"
-  movieCard.classList.remove("show__movies")
 
   const movies = await fetch(
     `http://www.omdbapi.com/?apikey=7840b18e&s=${title}`
@@ -32,11 +39,6 @@ async function movieSearch(title) {
   moviesData = await movies.json();
   const films = moviesData.Search.slice(0, 8);
   movieCardEl.innerHTML = films.map((movie) => moviesHTML(movie)).join("");
-
-  setTimeout(() => { 
-    movieCard.classList += " show__movies"
-    movieCard.classList.remove("show__loading") 
-  }, 1000);
 }
 
 

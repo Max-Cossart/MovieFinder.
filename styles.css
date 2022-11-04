@@ -336,20 +336,18 @@ h4 {
     align-items: center;
     justify-content: center !important;
     margin-top: 60px;
-    color: rgb(240, 238, 238);
+    color: blue;
     font-size: 40px;
+  }
+
+.loading__state--spinner {
+    display: none !important;
 }
 
 .show__loading .loading__state--spinner {
     display: block !important;
 }
 
-.loading__state--spinner {
-    color: blue;
-    font-size: 40px;
-    margin-top: 64px;
-    display: none !important;
-}
 
 .fa-spinner {
     animation: rotate 800ms infinite ;
