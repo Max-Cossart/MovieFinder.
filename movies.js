@@ -34,7 +34,7 @@ function searchBtn(event) {
 async function movieSearch(title) {
 
   const movies = await fetch(
-    `http://www.omdbapi.com/?apikey=7840b18e&s=${title}`
+    `https://www.omdbapi.com/?apikey=7840b18e&s=${title}`
   );
   moviesData = await movies.json();
   const films = moviesData.Search.slice(0, 8);
